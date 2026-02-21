@@ -5,142 +5,266 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SugarSMP | Minecraft Server</title>
 
-<!-- Pixel Font -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:'Press Start 2P',cursive;
+    background:radial-gradient(circle at top,#2a1a0f,#120c06 70%);
+    color:#fff;
 }
 
-body {
-    font-family: 'Press Start 2P', cursive;
-    background: url("https://images.alphacoders.com/109/1094315.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    text-align: center;
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#1b120a;
+    border-bottom:2px solid #ffb347;
 }
 
-/* Dark overlay */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.75);
-    z-index: -1;
+nav .logo{
+    color:#ffb347;
+    font-size:14px;
 }
 
-header {
-    padding: 40px 20px;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
 
-header h1 {
-    font-size: 28px;
-    color: #55ff55;
-    text-shadow: 4px 4px #000;
+nav ul li{
+    font-size:10px;
+    cursor:pointer;
+    color:#ccc;
 }
 
-header p {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #aaa;
+nav ul li:hover{
+    color:#ffb347;
 }
 
-.section {
-    padding: 60px 20px;
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px;
 }
 
-.card {
-    background: rgba(30,30,30,0.9);
-    border: 4px solid #55ff55;
-    display: inline-block;
-    padding: 30px;
-    margin: 20px;
-    width: 300px;
-    box-shadow: 0 0 20px #55ff55;
+.hero h1{
+    font-size:32px;
+    color:#ffb347;
+    text-shadow:4px 4px #000;
+    margin-bottom:20px;
 }
 
-.card h2 {
-    font-size: 14px;
-    margin-bottom: 20px;
+.hero p{
+    font-size:10px;
+    color:#aaa;
+    margin-bottom:30px;
 }
 
-.card p {
-    font-size: 10px;
-    line-height: 1.6;
-    color: #ccc;
+.ip-box{
+    display:inline-block;
+    background:#2a1a0f;
+    padding:15px 25px;
+    border:2px solid #ffb347;
+    margin-bottom:20px;
+    cursor:pointer;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    background: #55ff55;
-    color: black;
-    text-decoration: none;
-    font-size: 12px;
-    border: 3px solid #000;
-    transition: 0.2s;
+.status{
+    margin-top:15px;
+    font-size:10px;
+    color:#55ff55;
 }
 
-.btn:hover {
-    background: #33cc33;
-    transform: scale(1.05);
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:60px 20px;
+    flex-wrap:wrap;
 }
 
-footer {
-    padding: 40px;
-    font-size: 10px;
-    color: #888;
+.stat{
+    text-align:center;
+}
+
+.stat h2{
+    color:#ffb347;
+    margin-bottom:10px;
+}
+
+.stat p{
+    font-size:10px;
+    color:#aaa;
+}
+
+/* FEATURES */
+.section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.section h2{
+    color:#ffb347;
+    margin-bottom:50px;
+}
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#1b120a;
+    border:2px solid #ffb347;
+    padding:30px;
+    width:280px;
+}
+
+.card h3{
+    font-size:12px;
+    margin-bottom:15px;
+    color:#ffb347;
+}
+
+.card p{
+    font-size:9px;
+    color:#ccc;
+}
+
+/* JOIN STEPS */
+.steps{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.step{
+    width:250px;
+}
+
+.step h3{
+    color:#ffb347;
+    margin-bottom:15px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:8px;
+    color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>SugarSMP</h1>
-    <p>Официалният Minecraft Survival сървър</p>
-</header>
+<nav>
+    <div class="logo">SugarSMP</div>
+    <ul>
+        <li>Начало</li>
+        <li>Функции</li>
+        <li>Правила</li>
+        <li>Discord</li>
+        <li>Магазин</li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>SUGAR SMP</h1>
+    <p>Качествен и приятелски Minecraft сървър</p>
+
+    <div class="ip-box" onclick="copyIP()">play.sugarsmp.com</div>
+    <div class="status" id="status">Онлайн: 0 играчи</div>
+</section>
+
+<section class="stats">
+    <div class="stat">
+        <h2>50+</h2>
+        <p>Регистрирани играчи</p>
+    </div>
+    <div class="stat">
+        <h2>24/7</h2>
+        <p>Онлайн сървър</p>
+    </div>
+    <div class="stat">
+        <h2>3</h2>
+        <p>Уникални свята</p>
+    </div>
+    <div class="stat">
+        <h2>10+</h2>
+        <p>Събития</p>
+    </div>
+</section>
 
 <section class="section">
-    <div class="card">
-        <h2>IP Адрес</h2>
-        <p>play.sugarsmp.com</p>
-        <a class="btn" onclick="copyIP()">Копирай IP</a>
-    </div>
+    <h2>Защо SugarSMP?</h2>
 
-    <div class="card">
-        <h2>Discord</h2>
-        <p>Присъедини се към общността</p>
-        <a href="#" class="btn">Влез в Discord</a>
-    </div>
+    <div class="features">
+        <div class="card">
+            <h3>Survival режим</h3>
+            <p>Чист Minecraft Survival с приятели.</p>
+        </div>
 
-    <div class="card">
-        <h2>Онлайн Играчите</h2>
-        <p id="onlinePlayers">Зареждане...</p>
-        <a class="btn" onclick="randomPlayers()">Обнови</a>
+        <div class="card">
+            <h3>Активен Discord</h3>
+            <p>Голяма общност и редовни новини.</p>
+        </div>
+
+        <div class="card">
+            <h3>Защитен сървър</h3>
+            <p>Anti-cheat и активни модератори.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Как да се присъединиш?</h2>
+
+    <div class="steps">
+        <div class="step">
+            <h3>1. Стартирай Minecraft</h3>
+            <p>Отвори Multiplayer.</p>
+        </div>
+
+        <div class="step">
+            <h3>2. Добави сървъра</h3>
+            <p>Въведи play.sugarsmp.com</p>
+        </div>
+
+        <div class="step">
+            <h3>3. Присъедини се</h3>
+            <p>Натисни Join Server.</p>
+        </div>
     </div>
 </section>
 
 <footer>
-    © 2026 SugarSMP. Всички права запазени.
+© 2026 SugarSMP. Всички права запазени.
 </footer>
 
 <script>
-function copyIP() {
+function copyIP(){
     navigator.clipboard.writeText("play.sugarsmp.com");
     alert("IP адресът е копиран!");
 }
 
-function randomPlayers() {
-    let players = Math.floor(Math.random() * 100);
-    document.getElementById("onlinePlayers").textContent = players + " играчи онлайн";
+function updatePlayers(){
+    let players = Math.floor(Math.random()*100);
+    document.getElementById("status").textContent = "Онлайн: " + players + " играчи";
 }
 
-randomPlayers();
+updatePlayers();
+setInterval(updatePlayers,5000);
 </script>
 
 </body>
