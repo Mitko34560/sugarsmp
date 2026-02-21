@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>SugarSMP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        button {
+            background: #4b729a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добре дошъл в SugarSMP</h1>
+        <p>Този сайт използва SugarSMP за подобряване на преживяването.</p>
+        <button id="acceptBtn">Приемам SugarSMP</button>
+    </div>
+
+    <script>
+        document.getElementById("acceptBtn").addEventListener("click", function() {
+            document.cookie = "SugarSMP_accepted=true; path=/; max-age=" + 60*60*24*365;
+            alert("SugarSMP е приет!");
+            window.location.reload();
+        });
+
+        function checkSugarSMP() {
+            return document.cookie.split('; ').find(row => row.startsWith("SugarSMP_accepted="));
+        }
+
+        if (checkSugarSMP()) {
+            document.querySelector(".container p").textContent = "SugarSMP вече е приет.";
+            document.getElementById("acceptBtn").style.display = "none";
+        }
+    </script>
+</body>
+</html>
