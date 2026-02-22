@@ -1,31 +1,45 @@
-/* Лого в навигацията */
+body{
+margin:0;
+font-family:'Press Start 2P',cursive;
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+color:white;
+text-align:center;
+}
+
+nav{
+background:#111;
+padding:20px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-size:10px;
+}
+
 .nav-logo{
 width:40px;
 vertical-align:middle;
-margin-right:20px;
+margin-right:15px;
 }
 
-/* Централно лого */
+.home{
+padding:80px 20px;
+}
+
 .main-logo{
-width:180px;
-margin-top:40px;
+width:200px;
 margin-bottom:30px;
-filter:drop-shadow(0 0 20px #ff00ff88);
 animation:float 4s ease-in-out infinite;
 }
 
-/* Леко плаваща анимация */
 @keyframes float{
-0%{transform:translateY(0px);}
+0%{transform:translateY(0);}
 50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
+100%{transform:translateY(0);}
 }
 
-/* Навигация */
-nav{
-background:#ffffff10;
-backdrop-filter:blur(10px);
-padding:20px;
-text-align:center;
-border-bottom:1px solid #ffffff20;
+h1{
+font-size:20px;
 }
