@@ -236,3 +236,94 @@ font-size:9px;
 .discord-order:hover{
 text-decoration:underline;
 }
+.shop-section{
+padding:120px 40px;
+max-width:1200px;
+margin:auto;
+}
+
+.shop-sub{
+margin-bottom:50px;
+color:#ccc;
+font-size:10px;
+}
+
+.shop-layout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:50px;
+}
+
+.products{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.product{
+background:#1b120a;
+padding:30px;
+border-radius:12px;
+border:1px solid #ffb34733;
+transition:0.3s;
+}
+
+.product:hover{
+transform:translateY(-6px);
+box-shadow:0 0 25px #ffb34755;
+}
+
+.highlight{
+border:1px solid #ffb347;
+}
+
+.spin ul{
+margin:15px 0;
+font-size:9px;
+padding-left:20px;
+}
+
+.price{
+color:#ffd27f;
+margin:10px 0 20px 0;
+}
+
+.discord-btn{
+display:inline-block;
+background:#5865F2;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+font-size:10px;
+transition:0.3s;
+}
+
+.discord-btn:hover{
+background:#4752c4;
+}
+
+.discord-btn.full{
+display:block;
+margin-top:30px;
+text-align:center;
+}
+
+.keys{
+background:#1b120a;
+padding:30px;
+border-radius:12px;
+border:1px solid #ffb34733;
+}
+
+.key{
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px solid #ffb34722;
+font-size:10px;
+}
+
+.key:last-child{
+border-bottom:none;
+}
