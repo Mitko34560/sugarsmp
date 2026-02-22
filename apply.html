@@ -2,9 +2,12 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кандидатстване - SugarSMP</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <nav>
@@ -17,13 +20,80 @@
 </nav>
 
 <section class="page">
-<h1>Кандидатстване</h1>
 
-<div class="card">
-<input type="text" placeholder="Minecraft Nick"><br><br>
-<textarea placeholder="Защо искаш да станеш част от екипа?" rows="4"></textarea><br><br>
-<button>Изпрати</button>
+<h1 class="form-title">Кандидатствай за Екип</h1>
+<p class="form-sub">Искаш да станеш част от екипа на SugarSMP? Попълни формуляра по-долу!</p>
+
+<form class="application-form">
+
+<h2>Лична информация</h2>
+
+<div class="form-grid">
+<div>
+<label>Истинско име *</label>
+<input type="text" required>
 </div>
+
+<div>
+<label>На колко години си? *</label>
+<input type="number" required>
+</div>
+
+<div>
+<label>Discord име *</label>
+<input type="text" required>
+</div>
+
+<div>
+<label>Minecraft име *</label>
+<input type="text" required>
+</div>
+</div>
+
+<h2>Опит</h2>
+
+<label>Бил ли си staff преди? Ако да, къде и какъв ранг?</label>
+<textarea rows="4"></textarea>
+
+<label>
+<input type="checkbox"> Бил ли си банван от нашия сървър?
+</label>
+
+<label>От колко време играеш Minecraft? *</label>
+<input type="text" required>
+
+<h2>Мотивация</h2>
+
+<label>Защо искаш да си staff при нас? *</label>
+<textarea rows="4" required></textarea>
+
+<label>
+<input type="checkbox"> Имаш ли възможност да записваш (OBS, Medal)?
+</label>
+
+<h2>Наличност</h2>
+
+<label>По колко време ще играеш в сървъра? *</label>
+<input type="text" required>
+
+<label>Имаш ли работа или училище?</label>
+<input type="text">
+
+<label>
+<input type="checkbox"> В момента staff ли си в друг сървър?
+</label>
+
+<label>Защо да изберем теб? *</label>
+<textarea rows="4" required></textarea>
+
+<div class="important-box">
+<input type="checkbox" required>
+<span>Важно! Със съгласието си заявяваш, че ако пуснеш фалшива кандидатура, тя ще бъде премахната.</span>
+</div>
+
+<button type="submit" class="submit-btn">Изпрати кандидатурата</button>
+
+</form>
 
 </section>
 
