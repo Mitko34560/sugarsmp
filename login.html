@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="page">
+<h1>Admin Login</h1>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<p>Нямаш профил?</p>
+<button onclick="register(
+prompt('Username'),
+prompt('Password')
+)">Създай</button>
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
