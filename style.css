@@ -600,3 +600,107 @@ transition:0.3s;
 .small-discord:hover{
 background:#4752c4;
 }
+body{
+margin:0;
+font-family:'VT323', monospace;
+background:#1a0f06;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+background:radial-gradient(circle at center,#3a220f 0%,#1a0f06 70%);
+}
+
+.hero-content{
+z-index:2;
+animation:fadeIn 1.5s ease-in-out;
+}
+
+.hero-logo{
+width:150px;
+margin-bottom:30px;
+animation:float 3s ease-in-out infinite;
+filter:drop-shadow(0 0 20px #d26cff);
+}
+
+.hero-title{
+font-size:70px;
+letter-spacing:4px;
+margin:0;
+}
+
+.hero-title span{
+animation:glow 2s infinite alternate;
+}
+
+.highlight{
+color:#d26cff;
+}
+
+.hero-sub{
+margin:20px 0;
+font-size:24px;
+color:#ccc;
+}
+
+.ip-button{
+margin-top:20px;
+padding:15px 40px;
+font-size:26px;
+background:#2a1a0f;
+border:2px solid #d26cff;
+color:#d26cff;
+cursor:pointer;
+transition:0.3s;
+}
+
+.ip-button:hover{
+background:#d26cff;
+color:#000;
+box-shadow:0 0 25px #d26cff;
+}
+
+.copy-msg{
+margin-top:15px;
+color:#2ecc71;
+font-size:20px;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #d26cff;}
+to{text-shadow:0 0 30px #d26cff;}
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* частици */
+.particles{
+position:absolute;
+width:100%;
+height:100%;
+background-image:radial-gradient(#d26cff 1px, transparent 1px);
+background-size:50px 50px;
+opacity:0.05;
+animation:moveBg 40s linear infinite;
+}
+
+@keyframes moveBg{
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
+}
