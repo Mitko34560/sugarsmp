@@ -4,11 +4,14 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Press Start 2P',cursive;
 background:#0d0d0d;
 color:white;
-min-height:100vh;
 overflow-x:hidden;
 }
 
@@ -35,9 +38,13 @@ z-index:-1;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:30px;
+gap:40px;
 padding:20px;
 background:#111;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
 }
 
 .nav-logo{
@@ -59,7 +66,8 @@ color:#ccc;
 /* HERO */
 .hero{
 text-align:center;
-padding-top:100px;
+padding-top:150px;
+padding-bottom:150px;
 }
 
 .main-logo{
@@ -75,8 +83,8 @@ animation:float 4s ease-in-out infinite;
 }
 
 h1{
-font-size:20px;
-margin-bottom:20px;
+font-size:18px;
+margin-bottom:40px;
 }
 
 .subtitle{
@@ -91,5 +99,32 @@ padding:15px 30px;
 background:white;
 color:black;
 border-radius:10px;
+font-size:10px;
+}
+
+/* СЕКЦИИ */
+.section{
+padding:150px 20px;
+text-align:center;
+}
+
+.card{
+background:#1a1a1a;
+padding:30px;
+margin:20px auto;
+width:320px;
+border-radius:12px;
+}
+
+button{
+background:white;
+color:black;
+border:none;
+padding:12px;
+margin-top:15px;
+cursor:pointer;
+border-radius:8px;
+width:100%;
+font-family:'Press Start 2P',cursive;
 font-size:10px;
 }
