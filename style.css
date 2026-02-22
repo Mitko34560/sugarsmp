@@ -123,3 +123,34 @@ cursor:pointer;
 font-family:'Press Start 2P',cursive;
 font-size:10px;
 }
+.pay-buttons{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:15px;
+}
+
+.pay-buttons a{
+text-decoration:none;
+padding:10px;
+border-radius:6px;
+font-size:10px;
+text-align:center;
+color:white;
+}
+
+.stripe{
+background:#635bff;
+}
+
+.paypal{
+background:#0070ba;
+}
+
+.revolut{
+background:#7a00ff;
+}
+
+.pay-buttons a:hover{
+opacity:0.85;
+}
