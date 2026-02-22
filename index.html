@@ -3,145 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SugarSMP Shop</title>
+<title>SugarSMP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 
 <style>
 body{
-    margin:0;
-    font-family:'Press Start 2P',cursive;
-    background:linear-gradient(135deg,#140028,#000814);
-    color:white;
-    text-align:center;
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#140028,#000814);
+color:white;
+text-align:center;
 }
 
 h1{
-    padding:50px 20px;
-    font-size:32px;
-    background:linear-gradient(90deg,#7b00ff,#00bfff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.container{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-    padding:20px;
+padding:40px;
+background:linear-gradient(90deg,#7b00ff,#00bfff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .card{
-    background:#1b0038;
-    border:2px solid #7b00ff;
-    padding:30px;
-    width:280px;
-    border-radius:15px;
-    box-shadow:0 0 20px #7b00ff55;
+background:#1b0038;
+border:2px solid #7b00ff;
+padding:30px;
+width:300px;
+margin:40px auto;
+border-radius:12px;
 }
 
-.card h2{
-    margin-bottom:15px;
-}
-
-.price{
-    font-size:20px;
-    color:#00bfff;
-    margin:20px 0;
+input, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
 }
 
 button{
-    display:block;
-    width:100%;
-    margin:10px 0;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-family:'Press Start 2P',cursive;
-    font-size:10px;
-    background:linear-gradient(90deg,#7b00ff,#00bfff);
-    color:white;
-}
-
-button:hover{
-    transform:scale(1.05);
-}
-.footer{
-    margin-top:60px;
-    padding:30px;
-    font-size:10px;
-    color:#888;
+background:linear-gradient(90deg,#7b00ff,#00bfff);
+border:none;
+padding:12px;
+color:white;
+cursor:pointer;
+border-radius:8px;
+width:100%;
 }
 </style>
 </head>
-
 <body>
 
-<h1>SugarSMP Привилегии</h1>
-
-<div class="container">
+<h1>SugarSMP</h1>
 
 <div class="card">
-<h2>VIP</h2>
-<p>Основни команди и бонуси</p>
-<div class="price">5 лв</div>
+<h2>Кандидатстване за Staff</h2>
 
-<a href="https://buy.stripe.com/9B6bJ2dsrdRBg1j6Mdebu02" target="_blank">
-<button>Плати със Stripe</button>
-</a>
+<input type="text" id="nick" placeholder="Minecraft Nick" required>
+<textarea id="reason" placeholder="Защо искаш да станеш Staff?" required></textarea>
 
-<a href="YOUR_PAYPAL_VIP_LINK" target="_blank">
-<button>Плати с PayPal</button>
-</a>
+<button onclick="submitApplication()">Изпрати</button>
 
-<a href="YOUR_REVOLUT_VIP_LINK" target="_blank">
-<button>Плати с Revolut</button>
-</a>
+<p id="status"></p>
 </div>
 
-<div class="card">
-<h2>MVP</h2>
-<p>Допълнителни екстри</p>
-<div class="price">10 лв</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-<a href="https://buy.stripe.com/28EaEY2NNcNxg1jeeFebu00" target="_blank">
-<button>Плати със Stripe</button>
-</a>
+const firebaseConfig = {
+  apiKey: "AIzaSyBBd3YcVsSBhANWRle6NHQeEmZ-7wybwYs",
+  authDomain: "sugarsmp-e1424.firebaseapp.com",
+  projectId: "sugarsmp-e1424",
+  storageBucket: "sugarsmp-e1424.firebasestorage.app",
+  messagingSenderId: "438182649137",
+  appId: "1:438182649137:web:779f4798e263f1d3c2e410",
+  measurementId: "G-YQDYKXN3ZN"
+};
 
-<a href="YOUR_PAYPAL_MVP_LINK" target="_blank">
-<button>Плати с PayPal</button>
-</a>
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-<a href="YOUR_REVOLUT_MVP_LINK" target="_blank">
-<button>Плати с Revolut</button>
-</a>
-</div>
+window.submitApplication = async function(){
+const nick = document.getElementById("nick").value;
+const reason = document.getElementById("reason").value;
 
-<div class="card">
-<h2>LEGEND</h2>
-<p>Всички привилегии</p>
-<div class="price">20 лв</div>
+if(!nick || !reason){
+document.getElementById("status").innerText = "Попълни всички полета.";
+return;
+}
 
-<a href="https://buy.stripe.com/28EfZi9cb5l56qJ8Ulebu03" target="_blank">
-<button>Плати със Stripe</button>
-</a>
+await addDoc(collection(db, "applications"), {
+nick: nick,
+reason: reason,
+date: new Date()
+});
 
-<a href="YOUR_PAYPAL_LEGEND_LINK" target="_blank">
-<button>Плати с PayPal</button>
-</a>
-
-<a href="YOUR_REVOLUT_LEGEND_LINK" target="_blank">
-<button>Плати с Revolut</button>
-</a>
-</div>
-
-</div>
-
-<div class="footer">
-© 2026 SugarSMP. Всички права запазени.
-</div>
+document.getElementById("status").innerText = "Кандидатурата е изпратена!";
+document.getElementById("nick").value="";
+document.getElementById("reason").value="";
+}
+</script>
 
 </body>
 </html>
