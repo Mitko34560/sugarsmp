@@ -1,45 +1,122 @@
 body{
 margin:0;
 font-family:'Press Start 2P',cursive;
-background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
 color:white;
-text-align:center;
+overflow-x:hidden;
+background:#0f0f0f;
+}
+
+/* Pixel анимиран фон */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+repeating-linear-gradient(
+0deg,
+#1a1a1a 0px,
+#1a1a1a 2px,
+#222 2px,
+#222 4px
+),
+repeating-linear-gradient(
+90deg,
+#1a1a1a 0px,
+#1a1a1a 2px,
+#222 2px,
+#222 4px
+);
+opacity:0.4;
+animation:move 25s linear infinite;
+z-index:-2;
+}
+
+@keyframes move{
+from{background-position:0 0,0 0;}
+to{background-position:300px 300px,300px 300px;}
 }
 
 nav{
 background:#111;
-padding:20px;
+padding:15px;
+}
+
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
 nav a{
 color:white;
-margin:0 15px;
 text-decoration:none;
 font-size:10px;
+margin:0 10px;
 }
 
 .nav-logo{
 width:40px;
-vertical-align:middle;
-margin-right:15px;
 }
 
 .home{
+text-align:center;
 padding:80px 20px;
 }
 
 .main-logo{
-width:200px;
+width:180px;
 margin-bottom:30px;
 animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
 0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
+50%{transform:translateY(-12px);}
 100%{transform:translateY(0);}
 }
 
 h1{
-font-size:20px;
+text-align:center;
+margin-top:60px;
+font-size:18px;
+}
+
+.subtitle{
+margin-top:20px;
+font-size:10px;
+}
+
+.ip-box{
+margin-top:30px;
+background:#ffffff10;
+padding:15px;
+display:inline-block;
+border-radius:10px;
+}
+
+.card{
+background:#ffffff10;
+padding:30px;
+margin:40px auto;
+width:300px;
+border-radius:12px;
+text-align:center;
+}
+
+button{
+background:white;
+color:black;
+border:none;
+padding:12px;
+margin-top:15px;
+cursor:pointer;
+border-radius:8px;
+width:100%;
+font-family:'Press Start 2P',cursive;
+font-size:10px;
 }
