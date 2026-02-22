@@ -146,3 +146,82 @@ background:#635bff;
 .pay-buttons a:hover{
 opacity:0.85;
 }
+.application-form{
+max-width:800px;
+margin:50px auto;
+background:#1b120a;
+padding:40px;
+border:1px solid #ffb34733;
+border-radius:10px;
+}
+
+.form-title{
+text-align:center;
+margin-bottom:20px;
+}
+
+.form-sub{
+text-align:center;
+color:#ccc;
+margin-bottom:40px;
+font-size:10px;
+}
+
+.application-form h2{
+margin:40px 0 20px;
+color:#ffb347;
+font-size:14px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.application-form label{
+display:block;
+margin:15px 0 5px;
+font-size:9px;
+}
+
+.application-form input,
+.application-form textarea{
+width:100%;
+padding:12px;
+background:#2a1a0f;
+border:1px solid #ffb34733;
+color:white;
+font-family:'Press Start 2P',cursive;
+font-size:9px;
+border-radius:6px;
+}
+
+.application-form textarea{
+resize:none;
+}
+
+.important-box{
+background:#2a1a0f;
+border:1px solid #ffb34755;
+padding:15px;
+margin:30px 0;
+display:flex;
+gap:10px;
+align-items:center;
+font-size:8px;
+}
+
+.submit-btn{
+width:100%;
+padding:15px;
+background:linear-gradient(90deg,#ddd,#999);
+border:none;
+cursor:pointer;
+font-family:'Press Start 2P',cursive;
+font-size:10px;
+}
+
+.submit-btn:hover{
+opacity:0.9;
+}
