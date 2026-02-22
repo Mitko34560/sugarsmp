@@ -15,27 +15,64 @@
 <header>
     <div class="navbar">
         <img src="logo.png" class="nav-logo">
+
         <div class="nav-links">
-            <a href="#">Начало</a>
-            <a href="#">Привилегии</a>
-            <a href="#">Правила</a>
-            <a href="#">Кандидатстване</a>
+            <a href="#home">Начало</a>
+            <a href="#shop">Привилегии</a>
+            <a href="#rules">Правила</a>
+            <a href="#apply">Кандидатстване</a>
         </div>
     </div>
 </header>
 
-<main class="hero">
-
+<!-- НАЧАЛО -->
+<section id="home" class="hero">
     <img src="logo.png" class="main-logo">
-
     <h1>Добре дошъл в SugarSMP</h1>
     <p class="subtitle">Официалният Minecraft Survival сървър</p>
+    <div class="ip-box">play.sugarsmp.com</div>
+</section>
 
-    <div class="ip-box">
-        play.sugarsmp.com
+<!-- ПРИВИЛЕГИИ -->
+<section id="shop" class="section">
+    <h1>Привилегии</h1>
+
+    <div class="card">
+        <h3>VIP - 5 лв</h3>
+        <button>Купи</button>
     </div>
 
-</main>
+    <div class="card">
+        <h3>MVP - 10 лв</h3>
+        <button>Купи</button>
+    </div>
+
+    <div class="card">
+        <h3>LEGEND - 20 лв</h3>
+        <button>Купи</button>
+    </div>
+</section>
+
+<!-- ПРАВИЛА -->
+<section id="rules" class="section">
+    <h1>Правила</h1>
+
+    <div class="card">1. Забранени са хакове</div>
+    <div class="card">2. Без обиди</div>
+    <div class="card">3. Без grief</div>
+    <div class="card">4. Слушай администрацията</div>
+</section>
+
+<!-- КАНДИДАТСТВАНЕ -->
+<section id="apply" class="section">
+    <h1>Кандидатстване</h1>
+
+    <div class="card">
+        <input type="text" placeholder="Minecraft Nick"><br><br>
+        <textarea placeholder="Защо искаш да станеш част от екипа?" rows="4"></textarea><br><br>
+        <button>Изпрати</button>
+    </div>
+</section>
 
 </body>
 </html>
