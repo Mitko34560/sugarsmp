@@ -327,3 +327,74 @@ font-size:10px;
 .key:last-child{
 border-bottom:none;
 }
+.shop-section{
+padding:120px 40px;
+max-width:1200px;
+margin:auto;
+}
+
+.shop-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.cards-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card-box{
+background:#1b120a;
+border:1px solid #ffb34733;
+padding:30px;
+border-radius:12px;
+text-align:center;
+transition:0.3s;
+}
+
+.card-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px #ffb34755;
+}
+
+.card-box h2{
+color:#ffb347;
+margin-bottom:15px;
+}
+
+.price{
+color:#ffd27f;
+margin-bottom:20px;
+}
+
+.card-box ul{
+font-size:9px;
+margin-bottom:20px;
+padding-left:20px;
+text-align:left;
+}
+
+.discord-button{
+display:inline-block;
+background:#5865F2;
+color:white;
+padding:12px 18px;
+border-radius:8px;
+text-decoration:none;
+font-size:10px;
+transition:0.3s;
+}
+
+.discord-button i{
+margin-right:8px;
+}
+
+.discord-button:hover{
+background:#4752c4;
+}
+
+.highlight{
+border:1px solid #ffb347;
+background:linear-gradient(135deg,#5c3b0f,#2a1a0f);
+}
