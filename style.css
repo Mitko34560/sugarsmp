@@ -225,3 +225,14 @@ font-size:10px;
 .submit-btn:hover{
 opacity:0.9;
 }
+.discord-order{
+display:block;
+margin-top:20px;
+color:#00bfff;
+text-decoration:none;
+font-size:9px;
+}
+
+.discord-order:hover{
+text-decoration:underline;
+}
