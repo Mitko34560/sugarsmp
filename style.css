@@ -143,14 +143,6 @@ color:white;
 background:#635bff;
 }
 
-.paypal{
-background:#0070ba;
-}
-
-.revolut{
-background:#7a00ff;
-}
-
 .pay-buttons a:hover{
 opacity:0.85;
 }
