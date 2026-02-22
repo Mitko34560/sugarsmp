@@ -4,104 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SugarSMP</title>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:'Press Start 2P',cursive;
 background:linear-gradient(135deg,#140028,#000814);
 color:white;
+scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:#1b0038;
+padding:15px;
 text-align:center;
+z-index:1000;
+}
+
+nav a{
+color:#00bfff;
+margin:0 20px;
+text-decoration:none;
+font-size:10px;
+}
+
+section{
+padding:120px 20px 80px 20px;
+text-align:center;
+min-height:100vh;
 }
 
 h1{
-padding:40px;
 background:linear-gradient(90deg,#7b00ff,#00bfff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+font-size:24px;
+margin-bottom:40px;
+}
+
+.logo{
+width:150px;
+margin-bottom:30px;
 }
 
 .card{
 background:#1b0038;
 border:2px solid #7b00ff;
 padding:30px;
-width:300px;
-margin:40px auto;
+margin:20px auto;
+width:280px;
 border-radius:12px;
-}
-
-input, textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
 }
 
 button{
 background:linear-gradient(90deg,#7b00ff,#00bfff);
 border:none;
 padding:12px;
+margin-top:10px;
 color:white;
 cursor:pointer;
 border-radius:8px;
 width:100%;
+font-family:'Press Start 2P',cursive;
+font-size:10px;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+font-size:8px;
+color:#777;
 }
 </style>
 </head>
 <body>
 
-<h1>SugarSMP</h1>
+<nav>
+<a href="#home">Начало</a>
+<a href="#shop">Привилегии</a>
+<a href="#rules">Правила</a>
+<a href="#apply">Кандидатстване</a>
+</nav>
+
+<!-- НАЧАЛО -->
+<section id="home">
+<img src="https://i.imgur.com/21f171f4.png" class="logo">
+<h1>Добре дошъл в сайта на SugarSMP</h1>
+<p>Официалният Minecraft Survival сървър</p>
+<br>
+<p>IP: play.sugarsmp.com</p>
+</section>
+
+<!-- ПРИВИЛЕГИИ -->
+<section id="shop">
+<h1>Купи Привилегии</h1>
 
 <div class="card">
-<h2>Кандидатстване за Staff</h2>
-
-<input type="text" id="nick" placeholder="Minecraft Nick" required>
-<textarea id="reason" placeholder="Защо искаш да станеш Staff?" required></textarea>
-
-<button onclick="submitApplication()">Изпрати</button>
-
-<p id="status"></p>
+<h3>VIP - 5 лв</h3>
+<p>Основни бонуси</p>
+<button>Купи</button>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+<div class="card">
+<h3>MVP - 10 лв</h3>
+<p>Допълнителни команди</p>
+<button>Купи</button>
+</div>
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBBd3YcVsSBhANWRle6NHQeEmZ-7wybwYs",
-  authDomain: "sugarsmp-e1424.firebaseapp.com",
-  projectId: "sugarsmp-e1424",
-  storageBucket: "sugarsmp-e1424.firebasestorage.app",
-  messagingSenderId: "438182649137",
-  appId: "1:438182649137:web:779f4798e263f1d3c2e410",
-  measurementId: "G-YQDYKXN3ZN"
-};
+<div class="card">
+<h3>LEGEND - 20 лв</h3>
+<p>Всички екстри</p>
+<button>Купи</button>
+</div>
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+</section>
 
-window.submitApplication = async function(){
-const nick = document.getElementById("nick").value;
-const reason = document.getElementById("reason").value;
+<!-- ПРАВИЛА -->
+<section id="rules">
+<h1>Правила</h1>
 
-if(!nick || !reason){
-document.getElementById("status").innerText = "Попълни всички полета.";
-return;
-}
+<div class="card">
+<p>1. Забранени са хакове.</p>
+<p>2. Без обиди и токсично поведение.</p>
+<p>3. Без grief.</p>
+<p>4. Слушай администрацията.</p>
+</div>
 
-await addDoc(collection(db, "applications"), {
-nick: nick,
-reason: reason,
-date: new Date()
-});
+</section>
 
-document.getElementById("status").innerText = "Кандидатурата е изпратена!";
-document.getElementById("nick").value="";
-document.getElementById("reason").value="";
-}
-</script>
+<!-- КАНДИДАТСТВАНЕ -->
+<section id="apply">
+<h1>Кандидатстване в Екип</h1>
+
+<div class="card">
+<input type="text" placeholder="Minecraft Nick">
+<textarea placeholder="Защо искаш да станеш част от екипа?"></textarea>
+<button>Изпрати кандидатура</button>
+</div>
+
+</section>
+
+<div class="footer">
+© 2026 SugarSMP
+</div>
 
 </body>
 </html>
