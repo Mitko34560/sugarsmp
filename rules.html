@@ -14,7 +14,6 @@
 <img src="logo.png" class="nav-logo">
 <span class="nav-name">SugarSMP</span>
 </div>
-
 <div class="nav-links">
 <a href="index.html">Начало</a>
 <a href="shop.html">Привилегии</a>
@@ -29,7 +28,15 @@
 
 <h1>Правила на сървъра</h1>
 
+<div class="tabs">
+<button class="tab active" onclick="switchTab('mc',this)">Minecraft</button>
+<button class="tab" onclick="switchTab('dc',this)">Discord</button>
+</div>
+
 <div class="rules-box">
+
+<!-- Minecraft -->
+<div id="mc" class="tab-content active">
 
 <div class="rule-item"><span>1</span> Забранени са Hacked Clients, Macro-та и Script-ове.</div>
 <div class="rule-item"><span>2</span> Забранен е Auto Clicker.</div>
@@ -41,9 +48,35 @@
 
 </div>
 
+<!-- Discord -->
+<div id="dc" class="tab-content">
+
+<div class="rule-item"><span>1</span> Уважавайте всички членове.</div>
+<div class="rule-item"><span>2</span> Забранен е спам и безсмислено тагване.</div>
+<div class="rule-item"><span>3</span> Забранена е реклама на други сървъри.</div>
+<div class="rule-item"><span>4</span> Забранено е споделяне на лична информация.</div>
+<div class="rule-item"><span>5</span> Забранено е NSFW съдържание.</div>
+<div class="rule-item"><span>6</span> Каналите се използват по предназначение.</div>
+<div class="rule-item"><span>7</span> В тикетите се пише на кирилица.</div>
+
+<div class="rule-final">Спазвайте правилата в Discord!</div>
+
+</div>
+
+</div>
+
 </section>
 
 </div>
+
+<script>
+function switchTab(id,btn){
+document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+btn.classList.add('active');
+}
+</script>
 
 </body>
 </html>
