@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кандидатстване - SugarSMP</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
-<div class="nav-container">
+<nav class="navbar">
+<div class="logo-link">
+<img src="logo.png" class="nav-logo">
+<span class="nav-name">SugarSMP</span>
+</div>
+
+<div class="nav-links">
 <a href="index.html">Начало</a>
 <a href="shop.html">Привилегии</a>
 <a href="rules.html">Правила</a>
@@ -19,83 +23,38 @@
 </div>
 </nav>
 
-<section class="page">
+<div class="page-wrapper">
 
-<h1 class="form-title">Кандидатствай за Екип</h1>
-<p class="form-sub">Искаш да станеш част от екипа на SugarSMP? Попълни формуляра по-долу!</p>
+<section class="rules-wrapper">
 
-<form class="application-form">
+<h1>Кандидатстване за Екип</h1>
 
-<h2>Лична информация</h2>
+<div class="rules-box">
 
-<div class="form-grid">
-<div>
-<label>Истинско име *</label>
-<input type="text" required>
+<div class="rule-item">
+<span>1</span>
+<input type="text" placeholder="Minecraft име" style="width:100%; background:#1a0f06; border:none; color:white; font-size:20px;">
 </div>
 
-<div>
-<label>На колко години си? *</label>
-<input type="number" required>
+<div class="rule-item">
+<span>2</span>
+<input type="text" placeholder="Discord име" style="width:100%; background:#1a0f06; border:none; color:white; font-size:20px;">
 </div>
 
-<div>
-<label>Discord име *</label>
-<input type="text" required>
+<div class="rule-item">
+<span>3</span>
+<textarea placeholder="Защо искаш да си част от екипа?" style="width:100%; height:120px; background:#1a0f06; border:none; color:white; font-size:20px;"></textarea>
 </div>
 
-<div>
-<label>Minecraft име *</label>
-<input type="text" required>
+<button class="ip-button" style="margin-top:20px;">
+Изпрати кандидатура
+</button>
+
 </div>
-</div>
-
-<h2>Опит</h2>
-
-<label>Бил ли си staff преди? Ако да, къде и какъв ранг?</label>
-<textarea rows="4"></textarea>
-
-<label>
-<input type="checkbox"> Бил ли си банван от нашия сървър?
-</label>
-
-<label>От колко време играеш Minecraft? *</label>
-<input type="text" required>
-
-<h2>Мотивация</h2>
-
-<label>Защо искаш да си staff при нас? *</label>
-<textarea rows="4" required></textarea>
-
-<label>
-<input type="checkbox"> Имаш ли възможност да записваш (OBS, Medal)?
-</label>
-
-<h2>Наличност</h2>
-
-<label>По колко време ще играеш в сървъра? *</label>
-<input type="text" required>
-
-<label>Имаш ли работа или училище?</label>
-<input type="text">
-
-<label>
-<input type="checkbox"> В момента staff ли си в друг сървър?
-</label>
-
-<label>Защо да изберем теб? *</label>
-<textarea rows="4" required></textarea>
-
-<div class="important-box">
-<input type="checkbox" required>
-<span>Важно! Със съгласието си заявяваш, че ако пуснеш фалшива кандидатура, тя ще бъде премахната.</span>
-</div>
-
-<button type="submit" class="submit-btn">Изпрати кандидатурата</button>
-
-</form>
 
 </section>
+
+</div>
 
 </body>
 </html>
