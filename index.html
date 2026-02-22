@@ -3,269 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SugarSMP | Minecraft Server</title>
+<title>SugarSMP Shop</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
 body{
+    margin:0;
     font-family:'Press Start 2P',cursive;
-    background:radial-gradient(circle at top,#2a1a0f,#120c06 70%);
-    color:#fff;
-}
-
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:#1b120a;
-    border-bottom:2px solid #ffb347;
-}
-
-nav .logo{
-    color:#ffb347;
-    font-size:14px;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
-}
-
-nav ul li{
-    font-size:10px;
-    cursor:pointer;
-    color:#ccc;
-}
-
-nav ul li:hover{
-    color:#ffb347;
-}
-
-/* HERO */
-.hero{
+    background:linear-gradient(135deg,#140028,#000814);
+    color:white;
     text-align:center;
-    padding:100px 20px;
 }
 
-.hero h1{
+h1{
+    padding:50px 20px;
     font-size:32px;
-    color:#ffb347;
-    text-shadow:4px 4px #000;
-    margin-bottom:20px;
+    background:linear-gradient(90deg,#7b00ff,#00bfff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-    font-size:10px;
-    color:#aaa;
-    margin-bottom:30px;
-}
-
-.ip-box{
-    display:inline-block;
-    background:#2a1a0f;
-    padding:15px 25px;
-    border:2px solid #ffb347;
-    margin-bottom:20px;
-    cursor:pointer;
-}
-
-.status{
-    margin-top:15px;
-    font-size:10px;
-    color:#55ff55;
-}
-
-/* STATS */
-.stats{
+.container{
     display:flex;
     justify-content:center;
     gap:40px;
-    padding:60px 20px;
     flex-wrap:wrap;
-}
-
-.stat{
-    text-align:center;
-}
-
-.stat h2{
-    color:#ffb347;
-    margin-bottom:10px;
-}
-
-.stat p{
-    font-size:10px;
-    color:#aaa;
-}
-
-/* FEATURES */
-.section{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.section h2{
-    color:#ffb347;
-    margin-bottom:50px;
-}
-
-.features{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+    padding:20px;
 }
 
 .card{
-    background:#1b120a;
-    border:2px solid #ffb347;
+    background:#1b0038;
+    border:2px solid #7b00ff;
     padding:30px;
     width:280px;
+    border-radius:15px;
+    box-shadow:0 0 20px #7b00ff55;
 }
 
-.card h3{
-    font-size:12px;
-    margin-bottom:15px;
-    color:#ffb347;
-}
-
-.card p{
-    font-size:9px;
-    color:#ccc;
-}
-
-/* JOIN STEPS */
-.steps{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-}
-
-.step{
-    width:250px;
-}
-
-.step h3{
-    color:#ffb347;
+.card h2{
     margin-bottom:15px;
 }
 
-footer{
-    text-align:center;
-    padding:40px;
-    font-size:8px;
-    color:#777;
+.price{
+    font-size:20px;
+    color:#00bfff;
+    margin:20px 0;
+}
+
+button{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-family:'Press Start 2P',cursive;
+    font-size:10px;
+    background:linear-gradient(90deg,#7b00ff,#00bfff);
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+.footer{
+    margin-top:60px;
+    padding:30px;
+    font-size:10px;
+    color:#888;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">SugarSMP</div>
-    <ul>
-        <li>Начало</li>
-        <li>Функции</li>
-        <li>Правила</li>
-        <li>Discord</li>
-        <li>Магазин</li>
-    </ul>
-</nav>
+<h1>SugarSMP Привилегии</h1>
 
-<section class="hero">
-    <h1>SUGAR SMP</h1>
-    <p>Качествен и приятелски Minecraft сървър</p>
+<div class="container">
 
-    <div class="ip-box" onclick="copyIP()">play.sugarsmp.com</div>
-    <div class="status" id="status">Онлайн: 0 играчи</div>
-</section>
+<div class="card">
+<h2>VIP</h2>
+<p>Основни команди и бонуси</p>
+<div class="price">5 лв</div>
 
-<section class="stats">
-    <div class="stat">
-        <h2>50+</h2>
-        <p>Регистрирани играчи</p>
-    </div>
-    <div class="stat">
-        <h2>24/7</h2>
-        <p>Онлайн сървър</p>
-    </div>
-    <div class="stat">
-        <h2>3</h2>
-        <p>Уникални свята</p>
-    </div>
-    <div class="stat">
-        <h2>10+</h2>
-        <p>Събития</p>
-    </div>
-</section>
+<a href="https://buy.stripe.com/9B6bJ2dsrdRBg1j6Mdebu02" target="_blank">
+<button>Плати със Stripe</button>
+</a>
 
-<section class="section">
-    <h2>Защо SugarSMP?</h2>
+<a href="YOUR_PAYPAL_VIP_LINK" target="_blank">
+<button>Плати с PayPal</button>
+</a>
 
-    <div class="features">
-        <div class="card">
-            <h3>Survival режим</h3>
-            <p>Чист Minecraft Survival с приятели.</p>
-        </div>
+<a href="YOUR_REVOLUT_VIP_LINK" target="_blank">
+<button>Плати с Revolut</button>
+</a>
+</div>
 
-        <div class="card">
-            <h3>Активен Discord</h3>
-            <p>Голяма общност и редовни новини.</p>
-        </div>
+<div class="card">
+<h2>MVP</h2>
+<p>Допълнителни екстри</p>
+<div class="price">10 лв</div>
 
-        <div class="card">
-            <h3>Защитен сървър</h3>
-            <p>Anti-cheat и активни модератори.</p>
-        </div>
-    </div>
-</section>
+<a href="https://buy.stripe.com/28EaEY2NNcNxg1jeeFebu00" target="_blank">
+<button>Плати със Stripe</button>
+</a>
 
-<section class="section">
-    <h2>Как да се присъединиш?</h2>
+<a href="YOUR_PAYPAL_MVP_LINK" target="_blank">
+<button>Плати с PayPal</button>
+</a>
 
-    <div class="steps">
-        <div class="step">
-            <h3>1. Стартирай Minecraft</h3>
-            <p>Отвори Multiplayer.</p>
-        </div>
+<a href="YOUR_REVOLUT_MVP_LINK" target="_blank">
+<button>Плати с Revolut</button>
+</a>
+</div>
 
-        <div class="step">
-            <h3>2. Добави сървъра</h3>
-            <p>Въведи play.sugarsmp.com</p>
-        </div>
+<div class="card">
+<h2>LEGEND</h2>
+<p>Всички привилегии</p>
+<div class="price">20 лв</div>
 
-        <div class="step">
-            <h3>3. Присъедини се</h3>
-            <p>Натисни Join Server.</p>
-        </div>
-    </div>
-</section>
+<a href="https://buy.stripe.com/28EfZi9cb5l56qJ8Ulebu03" target="_blank">
+<button>Плати със Stripe</button>
+</a>
 
-<footer>
+<a href="YOUR_PAYPAL_LEGEND_LINK" target="_blank">
+<button>Плати с PayPal</button>
+</a>
+
+<a href="YOUR_REVOLUT_LEGEND_LINK" target="_blank">
+<button>Плати с Revolut</button>
+</a>
+</div>
+
+</div>
+
+<div class="footer">
 © 2026 SugarSMP. Всички права запазени.
-</footer>
-
-<script>
-function copyIP(){
-    navigator.clipboard.writeText("play.sugarsmp.com");
-    alert("IP адресът е копиран!");
-}
-
-function updatePlayers(){
-    let players = Math.floor(Math.random()*100);
-    document.getElementById("status").textContent = "Онлайн: " + players + " играчи";
-}
-
-updatePlayers();
-setInterval(updatePlayers,5000);
-</script>
+</div>
 
 </body>
 </html>
