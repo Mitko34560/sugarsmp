@@ -704,3 +704,48 @@ animation:moveBg 40s linear infinite;
 from{background-position:0 0;}
 to{background-position:1000px 1000px;}
 }
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+z-index:999;
+}
+
+.nav-left{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.nav-logo{
+width:40px;
+}
+
+.nav-name{
+font-size:24px;
+color:#d26cff;
+}
+
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+color:white;
+font-size:22px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#d26cff;
+}
+
+/* да не се покрива hero от менюто */
+.hero{
+padding-top:100px;
+}
