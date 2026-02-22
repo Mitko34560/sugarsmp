@@ -18,7 +18,7 @@
 <a href="index.html">Начало</a>
 <a href="shop.html">Привилегии</a>
 <a href="rules.html">Правила</a>
-<a href="apply.html">Кандидатстване</a>
+<a href="apply.html" class="active">Кандидатстване</a>
 </div>
 </nav>
 
@@ -30,49 +30,96 @@
 
 <div class="rules-box">
 
-<div class="rule-item"><span>1</span>
-<input type="text" placeholder="Истинско име">
+<form id="applyForm">
+
+<div class="rule-item">
+<span>1</span>
+<input type="text" id="name" placeholder="Истинско име" required>
 </div>
 
-<div class="rule-item"><span>2</span>
-<input type="number" placeholder="На колко години си?">
+<div class="rule-item">
+<span>2</span>
+<input type="number" id="age" placeholder="На колко години си?" required>
 </div>
 
-<div class="rule-item"><span>3</span>
-<input type="text" placeholder="Discord име">
+<div class="rule-item">
+<span>3</span>
+<input type="text" id="discord" placeholder="Discord име" required>
 </div>
 
-<div class="rule-item"><span>4</span>
-<input type="text" placeholder="Minecraft име">
+<div class="rule-item">
+<span>4</span>
+<input type="text" id="minecraft" placeholder="Minecraft име" required>
 </div>
 
-<div class="rule-item"><span>5</span>
-<textarea placeholder="Бил ли си staff преди? Къде и какъв ранг?"></textarea>
+<div class="rule-item">
+<span>5</span>
+<textarea id="experience" placeholder="Бил ли си staff преди? Къде и какъв ранг?" required></textarea>
 </div>
 
-<div class="rule-item"><span>6</span>
-<input type="text" placeholder="От колко време играеш Minecraft?">
+<div class="rule-item">
+<span>6</span>
+<input type="text" id="playtime" placeholder="От колко време играеш Minecraft?" required>
 </div>
 
-<div class="rule-item"><span>7</span>
-<textarea placeholder="Защо искаш да си staff при нас?"></textarea>
+<div class="rule-item">
+<span>7</span>
+<textarea id="motivation" placeholder="Защо искаш да си staff при нас?" required></textarea>
 </div>
 
-<div class="rule-item"><span>8</span>
-<input type="text" placeholder="По колко време ще играеш на ден?">
+<div class="rule-item">
+<span>8</span>
+<input type="text" id="activity" placeholder="По колко време ще играеш на ден?" required>
 </div>
 
-<div class="rule-item"><span>9</span>
-<textarea placeholder="Защо да изберем теб?"></textarea>
+<div class="rule-item">
+<span>9</span>
+<textarea id="why" placeholder="Защо да изберем теб?" required></textarea>
 </div>
 
-<button class="ip-button" style="margin-top:20px;">Изпрати кандидатура</button>
+<button type="submit" class="ip-button">Изпрати кандидатура</button>
+
+</form>
 
 </div>
 
 </section>
 
 </div>
+
+<script>
+document.getElementById("applyForm").addEventListener("submit", async function(e){
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+age: document.getElementById("age").value,
+discord: document.getElementById("discord").value,
+minecraft: document.getElementById("minecraft").value,
+experience: document.getElementById("experience").value,
+playtime: document.getElementById("playtime").value,
+motivation: document.getElementById("motivation").value,
+activity: document.getElementById("activity").value,
+why: document.getElementById("why").value
+};
+
+try {
+
+await fetch("https://sugarsmp.onrender.com/apply", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify(data)
+});
+
+alert("Кандидатурата е изпратена успешно!");
+document.getElementById("applyForm").reset();
+
+} catch (err) {
+alert("Грешка при изпращане.");
+}
+
+});
+</script>
 
 </body>
 </html>
