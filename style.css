@@ -4,127 +4,78 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 font-family:'Press Start 2P',cursive;
-background:#0d0d0d;
-color:white;
-overflow-x:hidden;
+background:radial-gradient(circle at top,#2a1a0f,#120c06 70%);
+color:#fff;
+min-height:100vh;
 }
 
-/* АНИМИРАН ФОН */
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 30%, #ffffff15, transparent 40%),
-radial-gradient(circle at 80% 70%, #ffffff10, transparent 40%);
-animation:moveGlow 12s ease-in-out infinite alternate;
-z-index:-1;
-}
-
-@keyframes moveGlow{
-0%{transform:scale(1);}
-100%{transform:scale(1.2);}
-}
-
-/* NAVBAR */
-.navbar{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:40px;
+nav{
+background:#1b120a;
 padding:20px;
-background:#111;
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
+text-align:center;
+border-bottom:1px solid #ffb34733;
 }
 
-.nav-logo{
-width:40px;
-}
-
-.nav-links a{
-color:white;
+nav a{
+color:#ffb347;
+margin:0 20px;
 text-decoration:none;
 font-size:10px;
-margin:0 10px;
-transition:0.3s;
 }
 
-.nav-links a:hover{
-color:#ccc;
-}
-
-/* HERO */
 .hero{
 text-align:center;
-padding-top:150px;
-padding-bottom:150px;
+padding:120px 20px;
 }
 
-.main-logo{
-width:200px;
+.version{
+display:inline-block;
+background:#1f3d0f;
+color:#7CFC00;
+padding:8px 15px;
+border-radius:20px;
+font-size:8px;
 margin-bottom:40px;
-animation:float 4s ease-in-out infinite;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
-}
-
-h1{
-font-size:18px;
+.hero-logo{
+width:140px;
 margin-bottom:40px;
+filter:drop-shadow(0 0 20px #ffffff55);
+}
+
+.main-title{
+font-size:26px;
+color:#ffb347;
+margin-bottom:20px;
+letter-spacing:4px;
 }
 
 .subtitle{
 font-size:10px;
-color:#bbb;
+color:#ccc;
 margin-bottom:40px;
 }
 
 .ip-box{
 display:inline-block;
-padding:15px 30px;
-background:white;
-color:black;
-border-radius:10px;
+padding:15px 25px;
+background:#222;
+border:2px solid #ffb347;
 font-size:10px;
 }
 
-/* СЕКЦИИ */
-.section{
-padding:150px 20px;
+.page{
+padding:120px 20px;
 text-align:center;
 }
 
 .card{
-background:#1a1a1a;
-padding:30px;
+background:#1b120a;
+border:1px solid #ffb34733;
+padding:25px;
 margin:20px auto;
-width:320px;
-border-radius:12px;
-}
-
-button{
-background:white;
-color:black;
-border:none;
-padding:12px;
-margin-top:15px;
-cursor:pointer;
-border-radius:8px;
-width:100%;
-font-family:'Press Start 2P',cursive;
-font-size:10px;
+width:300px;
 }
