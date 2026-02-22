@@ -20,69 +20,56 @@
 </div>
 </nav>
 
-<section class="rules-section">
+<section class="rules-wrapper">
 
 <h1 class="rules-title">Правила на сървъра</h1>
-<p class="rules-sub">Моля, прочетете внимателно правилата преди да започнете да играете</p>
+<p class="rules-desc">Моля, прочетете внимателно правилата преди да започнете да играете</p>
 
-<div class="rules-tabs">
-<button class="tab-btn active" onclick="showTab('mc')">Minecraft Сървър</button>
-<button class="tab-btn" onclick="showTab('dc')">Discord Сървър</button>
+<div class="tabs">
+<button class="tab active" onclick="switchTab('minecraft', this)">Minecraft</button>
+<button class="tab" onclick="switchTab('discord', this)">Discord</button>
 </div>
 
-<!-- MINECRAFT RULES -->
-<div id="mc" class="rules-content active">
+<div class="rules-box">
 
-<div class="rule-box">1. Забранени са Hacked Clients, Movement Mods, Inventory Mod, Health Indicators, Radar, Freecam, ESP, Auto или Easy Place, Crafting Modifications.</div>
+<div id="minecraft" class="tab-content active">
 
-<div class="rule-box">2. Забранени са Macro-та или Script-ове.</div>
-
-<div class="rule-box">3. Забранен е Auto Clicker-а.</div>
-
-<div class="rule-box">4. Забранени са опити за използване на бъгове и exploits.</div>
-
-<div class="rule-box">5. Забранени са опити за дублиране и дюпликейшън.</div>
-
-<div class="rule-box">6. Забранен е In-Real-Life Trading.</div>
-
-<div class="rule-box">7. Забранено е да търсите или използвате seed-а.</div>
-
-<div class="rule-box">8. Забранено е крещене, пускане на музика във voice chat.</div>
-
-<div class="rule-box">9. Максимален брой хора в team: 6.</div>
+<div class="rule-item"><span>1</span> Забранени са Hacked Clients, Movement Mods, Inventory Mod, Radar, Freecam, ESP, Auto Place.</div>
+<div class="rule-item"><span>2</span> Забранени са Macro-та и Script-ове.</div>
+<div class="rule-item"><span>3</span> Забранен е Auto Clicker.</div>
+<div class="rule-item"><span>4</span> Забранени са бъгове и exploits.</div>
+<div class="rule-item"><span>5</span> Забранено е дублиране (dupe).</div>
+<div class="rule-item"><span>6</span> Забранен е In-Real-Life Trading.</div>
+<div class="rule-item"><span>7</span> Забранено е търсенето на seed-а.</div>
+<div class="rule-item"><span>8</span> Забранено е крещене и музика във voice chat.</div>
+<div class="rule-item"><span>9</span> Максимален брой хора в team: 6.</div>
 
 </div>
 
-<!-- DISCORD RULES -->
-<div id="dc" class="rules-content">
+<div id="discord" class="tab-content">
 
-<div class="rule-box">1. Показвайте уважение един към друг. Без обиди, атаки или дискриминация.</div>
+<div class="rule-item"><span>1</span> Показвайте уважение. Без обиди и дискриминация.</div>
+<div class="rule-item"><span>2</span> Забранен е спам и безсмислено тагване на staff.</div>
+<div class="rule-item"><span>3</span> Забранени са реклами на други сървъри.</div>
+<div class="rule-item"><span>4</span> Забранено е споделяне на лична информация.</div>
+<div class="rule-item"><span>5</span> Забранено е NSFW съдържание.</div>
+<div class="rule-item"><span>6</span> Използвайте каналите по предназначение.</div>
+<div class="rule-item"><span>7</span> В тикетите се пише на кирилица.</div>
 
-<div class="rule-box">2. Спамът и постоянното тагване на staff без причина са забранени.</div>
+<div class="rule-final">Най-важното е да спазвате правилата и да се забавлявате!</div>
 
-<div class="rule-box">3. Реклами на други сървъри или Discord-и са забранени.</div>
-
-<div class="rule-box">4. Забранено е разпространяването на лична информация.</div>
-
-<div class="rule-box">5. Забранено е NSFW съдържание.</div>
-
-<div class="rule-box">6. Каналите трябва да се използват само по предназначение.</div>
-
-<div class="rule-box">7. В тикетите се пише само на кирилица.</div>
-
-<div class="rule-box success">Най-важното е да спазвате правилата и да се забавлявате!</div>
+</div>
 
 </div>
 
 </section>
 
 <script>
-function showTab(tab) {
-document.querySelectorAll('.rules-content').forEach(el => el.classList.remove('active'));
-document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-
-document.getElementById(tab).classList.add('active');
-event.target.classList.add('active');
+function switchTab(tabId, btn){
+document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
+document.getElementById(tabId).classList.add('active');
+btn.classList.add('active');
 }
 </script>
 
