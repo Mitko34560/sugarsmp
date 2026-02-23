@@ -1,8 +1,17 @@
 {
-  "name": "sugarsmp-bot",
+  "name": "sugarsmp-application-bot",
   "version": "1.0.0",
+  "description": "SugarSMP Discord Application Bot",
   "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
+    "cors": "^2.8.5",
     "discord.js": "^14.14.1",
     "express": "^4.18.2"
   }
