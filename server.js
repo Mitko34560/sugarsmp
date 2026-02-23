@@ -14,8 +14,8 @@ const client = new Client({
   ]
 });
 
-const BOT_TOKEN = "ТУК_ТОКЕНА";
-const CHANNEL_ID = "ID_НА_КАНАЛА";
+const BOT_TOKEN = "MTQ3NTI1MzI1MDcyOTk2Nzg0OQ.GN3Ue3.XUcTkeLvQEWxLYZ4htDI1bapxM6nMR245i90SA";
+const CHANNEL_ID = "1475585049083773131";
 
 client.login(BOT_TOKEN);
 
