@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const { Client, GatewayIntentBits, EmbedBuilder } = require("discord.js");
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 const client = new Client({
@@ -11,33 +14,41 @@ const client = new Client({
   ]
 });
 
-const BOT_TOKEN = "ТУК_СЛОЖИ_ТОКЕНА";
-const CHANNEL_ID = "КАНАЛ_ЗА_КАНДИДАТУРИ";
-const ROLE_ID = "ROLE_ID_АКО_ИСКАШ_ДА_ДАВА";
+const BOT_TOKEN = "ТУК_ТОКЕНА";
+const CHANNEL_ID = "ID_НА_КАНАЛА";
 
 client.login(BOT_TOKEN);
 
 app.post("/apply", async (req, res) => {
 
-  const data = req.body;
+  try {
 
-  const channel = await client.channels.fetch(CHANNEL_ID);
+    const data = req.body;
+    const channel = await client.channels.fetch(CHANNEL_ID);
 
-  const embed = new EmbedBuilder()
-    .setTitle("Нова кандидатура")
-    .addFields(
-      { name: "Име", value: data.name || "Не е попълнено" },
-      { name: "Години", value: data.age || "-" },
-      { name: "Discord", value: data.discord || "-" },
-      { name: "Minecraft", value: data.minecraft || "-" },
-      { name: "Опит", value: data.experience || "-" },
-      { name: "Мотивация", value: data.motivation || "-" }
-    )
-    .setColor(0x9b59b6);
+    const embed = new EmbedBuilder()
+      .setTitle("Нова кандидатура")
+      .addFields(
+        { name: "Име", value: data.name || "-" },
+        { name: "Години", value: data.age || "-" },
+        { name: "Discord", value: data.discord || "-" },
+        { name: "Minecraft", value: data.minecraft || "-" },
+        { name: "Опит", value: data.experience || "-" },
+        { name: "Мотивация", value: data.motivation || "-" },
+        { name: "Активност", value: data.activity || "-" },
+        { name: "Причина", value: data.why || "-" }
+      )
+      .setColor(0x9b59b6);
 
-  await channel.send({ embeds: [embed] });
+    await channel.send({ embeds: [embed] });
 
-  res.json({ success: true });
+    res.json({ success: true });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Грешка" });
+  }
+
 });
 
 app.listen(3000, () => console.log("Server started"));
