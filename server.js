@@ -14,7 +14,7 @@ const client = new Client({
   ]
 });
 
-const BOT_TOKEN = "MTQ3NTI1MzI1MDcyOTk2Nzg0OQ.GN3Ue3.XUcTkeLvQEWxLYZ4htDI1bapxM6nMR245i90SA";
+const BOT_TOKEN = "MTQ3NTI1MzI1MDcyOTk2Nzg0OQ.GbpVEz.D5SOBYt5-2BgKPrtNmNOCmImnHwanCF3Fj-fNc";
 const CHANNEL_ID = "1475585049083773131";
 
 client.login(BOT_TOKEN);
